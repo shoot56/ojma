@@ -1,0 +1,15 @@
+# # Log files
+*.log
+.cursor/**
+*.po~
+*.pot~
+languages/*.po~
+languages/*.pot~
+.DS_Store
+
+# Node modules
+node_modules/
+
+#vendor
+vendor/
+

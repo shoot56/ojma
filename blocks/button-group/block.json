@@ -1,0 +1,41 @@
+{
+	"name": "ojma/button-group",
+	"title": "Button Group",
+	"description": "Button Group Section",
+	"style": "",
+	"category": "holboll",
+	"icon": "button",
+	"keywords": ["link", "button", "href"],
+	"acf": { 
+		"mode": "preview",
+		"renderTemplate": "block-render.php"
+	},
+	"example": {
+		"attributes": {
+			"preview": true,
+			"data": {
+				"preview_image_help": "block-image-preview.png"
+			}
+		}
+	},
+	"supports": {
+		"align": ["none"],
+		"spacing": {
+			"margin": ["top", "bottom"],
+			"padding": ["top", "bottom"],
+			"units": [ "px" ]
+		},
+		"color" : {
+			"background": false,
+			"gradients": false
+		},
+		"anchor": false
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "none"
+		}
+	}
+	
+}

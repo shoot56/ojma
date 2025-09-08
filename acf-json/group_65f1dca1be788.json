@@ -1,0 +1,282 @@
+{
+    "key": "group_65f1dca1be788",
+    "title": "Block: Button Group",
+    "fields": [
+        {
+            "key": "field_65f1dca208dc6",
+            "label": "Direction",
+            "name": "direction",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "horizontal": "horizontal",
+                "vertical": "vertical"
+            },
+            "default_value": "horizontal",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65f1dcc608dc7",
+            "label": "Gap",
+            "name": "gap",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 24,
+            "min": 0,
+            "max": 120,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_65f1dce208dc8",
+            "label": "Alignment",
+            "name": "alignment",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "left",
+                "center": "center",
+                "right": "right"
+            },
+            "default_value": "left",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_65f1dcf508dc9",
+            "label": "Buttons",
+            "name": "buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add button",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65f1dd0908dca",
+                    "label": "Button",
+                    "name": "button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_65f1dcf508dc9"
+                },
+                {
+                    "key": "field_65f1dd1808dcb",
+                    "label": "Button style",
+                    "name": "button_style",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "separated-arrow": "separated-arrow",
+                        "primary": "primary",
+                        "dark": "dark",
+                        "white": "white"
+                    },
+                    "default_value": "primary",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 1,
+                    "layout": "vertical",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_65f1dcf508dc9"
+                },
+                {
+                    "key": "field_65f1dd4b08dcc",
+                    "label": "Button icon",
+                    "name": "button_icon",
+                    "aria-label": "",
+                    "type": "svg_icon",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": [],
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "default_path": "images",
+                    "svg_files": "images\/icons.svg",
+                    "allow_in_bindings": 1,
+                    "choices": {
+                        "icon-arrow-right": {
+                            "ID": "icon-arrow-right"
+                        },
+                        "icon-arrow-down": {
+                            "ID": "icon-arrow-down"
+                        },
+                        "icon-phone": {
+                            "ID": "icon-phone"
+                        },
+                        "icon-email": {
+                            "ID": "icon-email"
+                        },
+                        "icon-handshake": {
+                            "ID": "icon-handshake"
+                        },
+                        "icon-party": {
+                            "ID": "icon-party"
+                        },
+                        "icon-mind": {
+                            "ID": "icon-mind"
+                        },
+                        "icon-presentation": {
+                            "ID": "icon-presentation"
+                        },
+                        "icon-hands-helmet": {
+                            "ID": "icon-hands-helmet"
+                        },
+                        "icon-machine": {
+                            "ID": "icon-machine"
+                        },
+                        "icon-wheel": {
+                            "ID": "icon-wheel"
+                        },
+                        "icon-problem-solve": {
+                            "ID": "icon-problem-solve"
+                        },
+                        "icon-users-meeting": {
+                            "ID": "icon-users-meeting"
+                        },
+                        "icon-globe": {
+                            "ID": "icon-globe"
+                        },
+                        "icon-flex-checkmark": {
+                            "ID": "icon-flex-checkmark"
+                        },
+                        "icon-hands-star": {
+                            "ID": "icon-hands-star"
+                        },
+                        "icon-save-planet": {
+                            "ID": "icon-save-planet"
+                        },
+                        "icon-location-pin": {
+                            "ID": "icon-location-pin"
+                        },
+                        "icon-team": {
+                            "ID": "icon-team"
+                        },
+                        "icon-office": {
+                            "ID": "icon-office"
+                        }
+                    },
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "return_format": "value",
+                    "file": {
+                        "path": "images\/icons.svg"
+                    },
+                    "parent_repeater": "field_65f1dcf508dc9"
+                },
+                {
+                    "key": "field_65f1dd5b08dcd",
+                    "label": "Icon position",
+                    "name": "icon_position",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "before": "Before text",
+                        "after": "After text"
+                    },
+                    "default_value": "after",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_65f1dcf508dc9"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "ojma\/button-group"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1757080910
+}

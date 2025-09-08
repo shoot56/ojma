@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -26,5 +30,48 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ojma' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		
+		<div class="site-header__row">
+			<div class="container">
+				<div class="site-header__row-info">
+					<div class="site-header__row-text">Meet Our Team at [Conference Name]!</div>
+					<div class="site-header__row-button">
+						<a href="#" class="btn site-header__row-btn">
+							<span class="btn__text">Schedule a Meeting</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="site-header__frame">
+			<div class="container">
+				<div class="site-header__wrap">
+					<div class="header-logo header-logo--desktop">
+						<?php the_custom_logo(); ?>
+					</div>
+					<button aria-label="Mobile navigation" class="nav-opener"><span></span></button>
+					<nav class="main-navigation">
+						<div class="main-navigation__menu">
+							<?php
+							if (has_nav_menu( 'header-menu' )) {
+								wp_nav_menu(
+									array(
+										'theme_location' => 'header-menu',
+										'menu_id'        => '',
+										'container'      => '',
+										'menu_class'     => 'header-menu',
+									)
+								);
+							}
+							?>
+						</div>
+						<div class="main-navigation__button">
+							<a href="#" class="btn btn--primary">
+								<span class="btn__icon"><?php sprite_svg('icon-arrow-right', '24', '24', false); ?></span>
+								<span class="btn__text">CONTACT US</span>
+							</a>
+						</div>
+					</nav><!-- #site-navigation -->
+				</div>
+			</div>
+		</div>
 	</header><!-- #masthead -->

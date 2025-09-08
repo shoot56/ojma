@@ -1,0 +1,54 @@
+@mixin desktop-lg {
+	@media only screen and (max-width: 1440px) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media only screen and (max-width: 1350px) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media only screen and (max-width: 991px) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media only screen and (max-width: 767px) {
+		@content;
+	}
+}
+@mixin admin-bar {
+	@media only screen and (max-width: 782px) {
+		@content;
+	}
+}
+@mixin mobile-sm {
+	@media only screen and (max-width: 575px) {
+		@content;
+	}
+}
+@mixin mf-desktop {
+	@media only screen and (min-width: 992px) {
+		@content;
+	}
+}
+@mixin mf-tablet {
+	@media only screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+
+$base-font-size: 16;
+@function px-to-rem($size) {
+  @return $size / $base-font-size * 1rem;
+}
+
+$font-family-primary: "Geist", sans-serif;
+$font-family-mono: "Roboto Mono", monospace;
+
+
+
+$clr-base: #807D7C;
+
