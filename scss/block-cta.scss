@@ -18,6 +18,22 @@
 		rgba(255,255,255,.1) calc(100% / var(--rows) - 1px) calc(100% / var(--rows))
 		);
 	background-color: #120e0f;
+	@include mobile {
+		background: 
+		linear-gradient(to right, rgba(255,255,255,.1) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255,255,255,.1) 1px, transparent 1px),
+		repeating-linear-gradient(
+			to right,
+			transparent 0 calc(100% / var(--mcols) - 1px),
+			rgba(255,255,255,.1) calc(100% / var(--mcols) - 1px) calc(100% / var(--mcols))
+			),
+		repeating-linear-gradient(
+			to bottom,
+			transparent 0 calc(100% / var(--mrows) - 1px),
+			rgba(255,255,255,.1) calc(100% / var(--mrows) - 1px) calc(100% / var(--mrows))
+			);
+		background-color: #120e0f;
+	}
 	&__deco {
 		position: absolute;
 		width: 12px;
@@ -42,5 +58,16 @@
 	}
 	&__content {
 		padding: 105px 196px;
+		@include tablet {
+			padding: 60px;
+		}
+		@include mobile {
+			padding: 40px 15px;
+		}
+		.wp-block-heading {
+			@include mobile {
+				font-size: 36px !important;
+			}
+		}
 	}
 }

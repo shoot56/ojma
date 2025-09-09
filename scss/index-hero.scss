@@ -12,6 +12,15 @@
 		-ms-grid-columns:631px 1fr;
 		grid-template-columns:631px 1fr;
 		grid-gap: 130px;
+		@include desktop {
+			grid-gap: 40px;
+			-ms-grid-columns:631fr 400fr;
+			grid-template-columns:631fr 400fr;
+		}
+		@include tablet {
+			-ms-grid-columns:1fr;
+			grid-template-columns:1fr;
+		}
 	}
 	&__visual {
 		position: relative;
@@ -26,11 +35,27 @@
 			width: 1430px;
 			height: 1430px;
 			pointer-events: none;
+			@include desktop {
+				left: -160px;
+				top: -304px;
+				width: 1000px;
+				height: 1000px;
+			}
+			@include tablet {
+				left: -300px;
+				top: -184px;
+			}
 		}
 		&-image {
 			margin-right: -203px;
 			margin-left: 26px;
 			margin-top: 8px;
+			@include desktop {
+				margin-right: -50px;
+			}
+			@include tablet {
+				margin: 0;
+			}
 		}
 	}
 	&__content {

@@ -69,8 +69,12 @@ $allowed = array(
 		const height = board.offsetHeight;
 		const cols = Math.round(width / 34);
 		const rows = Math.round(height / 34);
+		const mcols = Math.round(width / 10);
+		const mrows = Math.round(height / 10);
 		board.style.setProperty('--cols', cols);
 		board.style.setProperty('--rows', rows);
+		board.style.setProperty('--mcols', mcols);
+		board.style.setProperty('--mrows', mrows);
 	}
 	function initCheckerboards() {
 		const boards = document.querySelectorAll('.cta');
