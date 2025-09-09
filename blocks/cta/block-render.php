@@ -9,16 +9,16 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'hero-' . $block['id'];
+$id = 'cta-' . $block['id'];
 if ( ! empty($block['anchor'] ) ) {
 	$id = $block['anchor'];
 }
 
-// wp_enqueue_style('block-hero');
+// wp_enqueue_style('block-cta');
 
 
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = 'hero has-container';
+$classes = 'cta';
 if ( ! empty( $block['className'] ) ) {
 	$classes .= ' ' . $block['className'];
 }
@@ -46,13 +46,6 @@ $allowed = array(
 	<?php echo '#' . $id; ?> {
 		overflow: hidden;
 	}
-	<?php echo '#' . $id; ?> .container {
-		position: relative;
-		z-index: 3;
-	}
-	<?php echo '#' . $id; ?> a {
-		pointer-events: none;
-	}
 </style>
 <?php endif ?>
 
@@ -63,24 +56,27 @@ $allowed = array(
 	?>
 <?php else: ?>
 <section id="<?php echo esc_attr( $id ); ?>" <?php echo $wrapper_attributes; ?>>
-	<div class="container">
-		<div class="hero__wrap">
-			<InnerBlocks class="hero__content" template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" />
-			<div class="hero__visual">
-				<?php $hero_image = get_field( 'hero_image' ); ?>
-				<?php $hero_bg = get_field( 'hero_bg' ); ?>
-				<?php if ( $hero_bg ) : ?>
-					<div class="hero__visual-bg">
-						<img src="<?php echo esc_url( $hero_bg['url'] ); ?>" alt="<?php echo esc_attr( $hero_bg['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
-				<?php if ( $hero_image ) : ?>
-					<div class="hero__visual-image">
-						<img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
+	<span class="cta__deco"></span>
+	<span class="cta__deco"></span>
+	<span class="cta__deco"></span>
+	<span class="cta__deco"></span>
+	<InnerBlocks class="cta__content" template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" />
 </section>
+
+<script type="text/javascript">
+	function resizeBoard(board) {
+		const width = board.offsetWidth;
+		const height = board.offsetHeight;
+		const cols = Math.round(width / 34);
+		const rows = Math.round(height / 34);
+		board.style.setProperty('--cols', cols);
+		board.style.setProperty('--rows', rows);
+	}
+	function initCheckerboards() {
+		const boards = document.querySelectorAll('.cta');
+		boards.forEach(board => resizeBoard(board));
+	}
+	window.addEventListener('resize', initCheckerboards);
+	window.addEventListener('DOMContentLoaded', initCheckerboards);
+</script>
 <?php endif; ?>

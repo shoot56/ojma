@@ -260,6 +260,33 @@ h6 {
 		width: 100%;
 		box-sizing: border-box;
 	}
+	&--separated-arrow {
+		padding: 0;
+		gap: 0;
+		.btn__icon {
+			flex: 0 0 60px;
+			padding: 18px;
+			background-color: #7EC052;
+			color: #fff;
+			transition: all 0.2s ease 0s;
+		}
+		.btn__text {
+			padding: 18px 24px;
+			line-height: 24px;
+			font-size: 18px;
+			background-color: #2A2627;
+			color: #fff;
+			transition: all 0.2s ease 0s;
+		}
+		&:hover {
+			.btn__text {
+				background-color: #1A1718;
+			}
+			.btn__icon {
+				background-color: #639C3D;
+			}
+		}
+	}
 	&--primary {
 		background-color: #7EC052;
 		color: #fff;
@@ -353,5 +380,65 @@ h6 {
 	gap: 16px;
 	a {
 		display: block;
+	}
+}
+
+
+.wp-block-group.is-style-has-pattern-bg {
+	background-image: linear-gradient(to bottom, #120e0f 0%, rgba(18,14,15,0) 100%), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1921' height='531' fill='none'%3E%3Cpath stroke='%23fff' stroke-opacity='.1' d='M-26.289.871H1176.71M-26.289 38.254H1176.71M-26.289 73.394H1176.71M-26.289 108.535H1176.71M-26.289 143.676H1176.71M-26.289 178.815H1176.71M-26.289 213.956H1176.71M-26.289 249.097H1176.71M-26.289 284.237H1176.71M-26.289 319.377H1176.71M-26.289 354.518H1176.71M-26.289 389.658H1176.71M-26.289 424.799H1176.71M-26.289 459.939H1176.71M-26.289 495.079H1176.71M-26.289 530.22H1176.71M503.559 1.371V530.72M540.941 1.371V530.72M578.326 1.371V530.72M615.711 1.371V530.72M653.092 1.371V530.72M690.477 1.371V530.72M727.861 1.371V530.72M765.242 1.371V530.72M802.627 1.371V530.72M840.012 1.371V530.72M877.393 1.371V530.72M914.777 1.371V530.72M952.158 1.371V530.72M989.543 1.371V530.72M1026.93 1.371V530.72M1064.31 1.371V530.72M1101.69 1.371V530.72M1139.08 1.371V530.72M1176.46 1.371V530.72M466.176 1.371V530.72M431.035 1.371V530.72M395.895 1.371V530.72M360.756 1.371V530.72M325.613 1.371V530.72M290.475 1.371V530.72M255.332 1.371V530.72M220.193 1.371V530.72M185.053 1.371V530.72M149.912 1.371V530.72M114.771 1.371V530.72M79.629 1.371V530.72M44.49 1.371V530.72M9.35 1.371V530.72M1176.71.871h1203M1176.71 38.254h1203M1176.71 73.394h1203M1176.71 108.535h1203M1176.71 143.676h1203M1176.71 178.815h1203M1176.71 213.956h1203M1176.71 249.097h1203M1176.71 284.237h1203M1176.71 319.377h1203M1176.71 354.518h1203M1176.71 389.658h1203M1176.71 424.799h1203M1176.71 459.939h1203M1176.71 495.079h1203M1176.71 530.22h1203M1706.56 1.371V530.72M1743.95 1.371V530.72M1781.33 1.371V530.72M1818.71 1.371V530.72M1856.09 1.371V530.72M1893.48 1.371V530.72M1669.18 1.371V530.72M1634.04 1.371V530.72M1598.9 1.371V530.72M1563.76 1.371V530.72M1528.61 1.371V530.72M1493.48 1.371V530.72M1458.33 1.371V530.72M1423.2 1.371V530.72M1388.05 1.371V530.72M1352.91 1.371V530.72M1317.77 1.371V530.72M1282.63 1.371V530.72M1247.49 1.371V530.72M1212.35 1.371V530.72M1177.21 1.371V530.72'/%3E%3C/svg%3E");
+	background-repeat: repeat-x;
+	background-position: bottom center;
+	background-size: 100% auto;
+}
+
+.video-block {
+	position: relative;
+	&__frame {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1200 / 675;
+	}
+	&__video-play-pause {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 64px;
+		height: 64px;
+		background-image: url("data:image/svg+xml,%3Csvg width='65' height='65' viewBox='0 0 65 65' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='32.4531' cy='32.8906' r='32' fill='black' fill-opacity='0.7'/%3E%3Cpath d='M47.0636 32.0382C47.6997 32.4285 47.6997 33.3528 47.0636 33.743L25.976 46.6789C25.3097 47.0876 24.4531 46.6081 24.4531 45.8265L24.4531 19.9548C24.4531 19.1731 25.3097 18.6936 25.976 19.1024L47.0636 32.0382Z' fill='%23F8FAFC'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		border-radius: 50%;
+		@include mobile {
+			width: 100px;
+			height: 100px;
+		}
+		&.is-playing {
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200' fill='none'%3E%3Ccircle opacity='0.6' cx='100' cy='100' r='100' fill='%23000000'/%3E%3Crect x='72' y='56' width='20' height='88' rx='4' fill='%23ffffff'/%3E%3Crect x='108' y='56' width='20' height='88' rx='4' fill='%23ffffff'/%3E%3C/svg%3E");
+			opacity: 0;
+		}
+		&.is-hovered {
+			opacity: 1;
+		}
+	}
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+	&__youtube {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 960 / 540;
+		iframe {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 16px;
+		}
 	}
 }

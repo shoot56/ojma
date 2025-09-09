@@ -39,6 +39,9 @@
 		-ms-grid-columns:160px 1fr;
 		grid-template-columns:160px 1fr;
 		align-items: center;
+		.header-logo {
+			max-width: 135px;
+		}
 	}
 }
 .nav-opener {
@@ -50,6 +53,12 @@
 	-ms-grid-columns:1fr 160px;
 	grid-template-columns:1fr 160px;
 	align-items: center;
+	&__button {
+		margin-left: auto;
+		.btn {
+			text-transform: uppercase;
+		}
+	}
 	&__menu {
 		display: flex;
 		justify-content: center;

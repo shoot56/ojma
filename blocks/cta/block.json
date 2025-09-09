@@ -1,14 +1,15 @@
 {
-	"name": "ojma/button-group",
-	"title": "Button Group",
-	"description": "Button Group Section",
+	"name": "ojma/cta",
+	"title": "Call to action",
+	"description": "",
 	"style": "",
 	"category": "ojma",
-	"icon": "button",
-	"keywords": ["link", "button", "href"],
+	"icon": "admin-links",
+	"keywords": ["cta", "call", "action", "case"],
 	"acf": { 
 		"mode": "preview",
-		"renderTemplate": "block-render.php"
+		"renderTemplate": "block-render.php",
+		"postTypes": [ "page" ]
 	},
 	"example": {
 		"attributes": {
@@ -19,17 +20,18 @@
 		}
 	},
 	"supports": {
-		"align": ["none"],
+		"align": ["none", "wide", "full"],
 		"spacing": {
 			"margin": ["top", "bottom"],
-			"padding": ["top", "bottom"],
+			"padding": false,
 			"units": [ "px" ]
 		},
 		"color" : {
+			"text": false,
 			"background": false,
 			"gradients": false
 		},
-		"anchor": false
+		"anchor": true
 	},
 	"attributes": {
 		"align": {
@@ -37,5 +39,4 @@
 			"default": "none"
 		}
 	}
-	
 }

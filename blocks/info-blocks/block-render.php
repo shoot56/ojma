@@ -9,16 +9,14 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'hero-' . $block['id'];
+$id = 'info-blocks-' . $block['id'];
 if ( ! empty($block['anchor'] ) ) {
 	$id = $block['anchor'];
 }
 
-// wp_enqueue_style('block-hero');
-
 
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = 'hero has-container';
+$classes = 'info-blocks';
 if ( ! empty( $block['className'] ) ) {
 	$classes .= ' ' . $block['className'];
 }
@@ -30,14 +28,6 @@ $wrapper_attributes = get_block_wrapper_attributes([
 	'class' => $classes
 ]);
 
-$template = array(
-	
-);
-
-$allowed = array(
-	
-)
-
 ?>
 
 <?php /* style for Preview Only */ ?>
@@ -45,13 +35,6 @@ $allowed = array(
 <style type="text/css">
 	<?php echo '#' . $id; ?> {
 		overflow: hidden;
-	}
-	<?php echo '#' . $id; ?> .container {
-		position: relative;
-		z-index: 3;
-	}
-	<?php echo '#' . $id; ?> a {
-		pointer-events: none;
 	}
 </style>
 <?php endif ?>
@@ -63,24 +46,32 @@ $allowed = array(
 	?>
 <?php else: ?>
 <section id="<?php echo esc_attr( $id ); ?>" <?php echo $wrapper_attributes; ?>>
-	<div class="container">
-		<div class="hero__wrap">
-			<InnerBlocks class="hero__content" template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" />
-			<div class="hero__visual">
-				<?php $hero_image = get_field( 'hero_image' ); ?>
-				<?php $hero_bg = get_field( 'hero_bg' ); ?>
-				<?php if ( $hero_bg ) : ?>
-					<div class="hero__visual-bg">
-						<img src="<?php echo esc_url( $hero_bg['url'] ); ?>" alt="<?php echo esc_attr( $hero_bg['alt'] ); ?>" />
+	<?php if ( have_rows( 'items' ) ) : ?>
+		<ul class="info-blocks__list">
+			<?php while ( have_rows( 'items' ) ) : the_row(); ?>
+				<?php $icon = get_sub_field( 'icon' ); ?>
+				<li class="info-blocks-item">
+					<div class="info-blocks-item__head">
+						<?php if (get_sub_field( 'title' )): ?>
+							<div class="info-blocks-item__title"><?php echo get_sub_field( 'title' ); ?></div>
+						<?php endif ?>
+						<div class="info-blocks-item__visual">
+							<?php if ( $icon ) : ?>
+								<div class="info-blocks-item__icon">
+									<img src="<?php echo esc_url( $icon['url'] ); ?>" alt="<?php echo esc_attr( $icon['alt'] ); ?>" />
+								</div>
+							<?php endif; ?>
+						</div>
 					</div>
-				<?php endif; ?>
-				<?php if ( $hero_image ) : ?>
-					<div class="hero__visual-image">
-						<img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
-			</div>
-		</div>
-	</div>
+					<?php if (get_sub_field( 'value' )): ?>
+						<div class="info-blocks-item__value"><?php echo get_sub_field( 'value' ); ?></div>
+					<?php endif ?>
+					<?php if (get_sub_field( 'description' )): ?>
+						<div class="info-blocks-item__description"><?php echo get_sub_field( 'description' ); ?></div>
+					<?php endif ?>
+				</li>
+			<?php endwhile; ?>
+		</ul>
+	<?php endif; ?>
 </section>
 <?php endif; ?>

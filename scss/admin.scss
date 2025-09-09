@@ -1,0 +1,17 @@
+.editor-styles-wrapper {
+	@import "_variable";
+	@import "_reset";
+	@import "_components";
+
+	// blocks
+	@import "index-hero";
+	@import "key-blocks";
+	@import "info-blocks";
+	@import "text-ticker";
+	@import "block-cta";
+}
+
+.select2-swp-acf-si__icon {
+	fill: currentColor;
+	stroke: currentColor;
+}

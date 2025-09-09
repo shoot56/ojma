@@ -25,9 +25,9 @@
 					"name": "Black"
 				},
 				{
-					"slug": "dark-red",
-					"color": "#8E1537",
-					"name": "Dark red"
+					"slug": "body-bg",
+					"color": "#120e0f",
+					"name": "Body background"
 				},
 				{
 					"slug": "red",
@@ -40,11 +40,6 @@
 					"name": "Yellow"
 				},
 				{
-					"slug": "green",
-					"color": "#76B82A",
-					"name": "Green"
-				},
-				{
 					"slug": "light-blue",
 					"color": "#4772B7",
 					"name": "Light blue"
@@ -55,19 +50,9 @@
 					"name": "Grey"
 				},
 				{
-					"slug": "eskas-grey",
-					"color": "#6B6B6B",
-					"name": "ESKAS Grey"
-				},
-				{
 					"slug": "white",
 					"color": "#fff",
 					"name": "White"
-				},
-				{
-					"slug": "svg-animation",
-					"color": "#FFCC0080",
-					"name": "SVG animation"
 				}
 			]
 		},
@@ -110,9 +95,14 @@
 		"typography": {
 			"fontFamilies": [
 				{
-					"fontFamily": "'Open Sans', sans-serif",
+					"fontFamily": "'Geist', sans-serif",
 					"slug": "primary-fonts",
 					"name": "Primary fonts"
+				},
+				{
+					"fontFamily": "'Roboto Mono', monospace",
+					"slug": "mono-fonts",
+					"name": "Mono fonts"
 				}
 			],
 			"fontSizes": [
@@ -155,37 +145,30 @@
 			},
 			"core/heading": {
 				"typography": {
-					"fontFamilies": [
-						{
-							"fontFamily": "'Open Sans', sans-serif",
-							"slug": "open-fonts",
-							"name": "Open Sans Fonts"
-						}
-					],
 					"fontSizes": [
 						{
 							"slug": "h5",
-							"size": "2rem",
+							"size": "1.5rem",
 							"name": "H5"
 						},
 						{
 							"slug": "h4",
-							"size": "2.5rem",
+							"size": "2rem",
 							"name": "H4"
 						},
 						{
 							"slug": "h3",
-							"size": "3rem",
+							"size": "2.2rem",
 							"name": "H3"
 						},
 						{
 							"slug": "h2",
-							"size": "3.5rem",
+							"size": "2.5rem",
 							"name": "H2"
 						},
 						{
 							"slug": "h1",
-							"size": "4rem",
+							"size": "3rem",
 							"name": "H1"
 						}
 
@@ -206,47 +189,9 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "Open Sans",
+			"fontFamily": "Geist",
 			"fontSize": "1rem",
 			"lineHeight": "1.5"
-		},
-		"blocks": {
-			"core/button": {
-				"variations": {
-					"fill": {
-						"border": {
-							"radius": "0",
-							"style": "none"
-						},
-						"spacing": {
-							"padding": {
-								"top": "17px",
-								"bottom": "17px",
-								"left": "20px",
-								"right": "20px"
-							}
-						}
-					},
-					"outline": {
-						"border": {
-							"radius": "0",
-							"style": "none"
-						},
-						"color": {
-							"text": "var( --wp--preset--color--dark-blue)"
-						},
-						"shadow": "inset 0 0 0 1px currentColor",
-						"spacing": {
-							"padding": {
-								"top": "17px",
-								"bottom": "17px",
-								"left": "20px",
-								"right": "20px"
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }

@@ -9,16 +9,13 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'hero-' . $block['id'];
+$id = 'text-ticker-' . $block['id'];
 if ( ! empty($block['anchor'] ) ) {
 	$id = $block['anchor'];
 }
 
-// wp_enqueue_style('block-hero');
-
-
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = 'hero has-container';
+$classes = 'text-ticker';
 if ( ! empty( $block['className'] ) ) {
 	$classes .= ' ' . $block['className'];
 }
@@ -26,35 +23,12 @@ if ( ! empty( $block['align'] ) ) {
 	$classes .= ' align' . $block['align'];
 }
 
+
 $wrapper_attributes = get_block_wrapper_attributes([
 	'class' => $classes
 ]);
 
-$template = array(
-	
-);
-
-$allowed = array(
-	
-)
-
 ?>
-
-<?php /* style for Preview Only */ ?>
-<?php if ($is_preview): ?>
-<style type="text/css">
-	<?php echo '#' . $id; ?> {
-		overflow: hidden;
-	}
-	<?php echo '#' . $id; ?> .container {
-		position: relative;
-		z-index: 3;
-	}
-	<?php echo '#' . $id; ?> a {
-		pointer-events: none;
-	}
-</style>
-<?php endif ?>
 
 <?php if (isset( $block['data']['preview_image_help'] )  ): ?>
 	<?php 
@@ -63,24 +37,31 @@ $allowed = array(
 	?>
 <?php else: ?>
 <section id="<?php echo esc_attr( $id ); ?>" <?php echo $wrapper_attributes; ?>>
-	<div class="container">
-		<div class="hero__wrap">
-			<InnerBlocks class="hero__content" template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" />
-			<div class="hero__visual">
-				<?php $hero_image = get_field( 'hero_image' ); ?>
-				<?php $hero_bg = get_field( 'hero_bg' ); ?>
-				<?php if ( $hero_bg ) : ?>
-					<div class="hero__visual-bg">
-						<img src="<?php echo esc_url( $hero_bg['url'] ); ?>" alt="<?php echo esc_attr( $hero_bg['alt'] ); ?>" />
+	<div class="customers-line">
+		<?php if ( have_rows( 'items' ) ) : ?>
+			<div class="customers-line__inner">
+				<div class="customers-line__slide">
+					<div class="customers-line__items-wrap" style="--speed: <?php the_field( 'animation_speed' ); ?>s;">
+						<div class="customers-line__items marquee to-left">
+							<?php while ( have_rows( 'items' ) ) : the_row(); ?>
+								<?php if (get_sub_field( 'text' )): ?>
+									<div class="customers-line__item">
+										<div class="text-ticker__item"><?php echo get_sub_field( 'text' ); ?></div>
+									</div>
+								<?php endif ?>
+							<?php endwhile; ?>
+							<?php while ( have_rows( 'items' ) ) : the_row(); ?>
+								<?php if (get_sub_field( 'text' )): ?>
+									<div class="customers-line__item">
+										<div class="text-ticker__item"><?php echo get_sub_field( 'text' ); ?></div>
+									</div>
+								<?php endif ?>
+							<?php endwhile; ?>
+						</div>
 					</div>
-				<?php endif; ?>
-				<?php if ( $hero_image ) : ?>
-					<div class="hero__visual-image">
-						<img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
+				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 	</div>
 </section>
 <?php endif; ?>

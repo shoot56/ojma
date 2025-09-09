@@ -1,14 +1,15 @@
 {
-	"name": "ojma/button-group",
-	"title": "Button Group",
-	"description": "Button Group Section",
+	"name": "ojma/key-blocks",
+	"title": "Key blocks",
+	"description": "",
 	"style": "",
 	"category": "ojma",
-	"icon": "button",
-	"keywords": ["link", "button", "href"],
+	"icon": "columns",
+	"keywords": ["list", "block", "key"],
 	"acf": { 
 		"mode": "preview",
-		"renderTemplate": "block-render.php"
+		"renderTemplate": "block-render.php",
+		"postTypes": [ "page" ]
 	},
 	"example": {
 		"attributes": {
@@ -21,15 +22,16 @@
 	"supports": {
 		"align": ["none"],
 		"spacing": {
-			"margin": ["top", "bottom"],
-			"padding": ["top", "bottom"],
+			"margin": ["bottom"],
+			"padding": false,
 			"units": [ "px" ]
 		},
 		"color" : {
+			"text": false,
 			"background": false,
 			"gradients": false
 		},
-		"anchor": false
+		"anchor": true
 	},
 	"attributes": {
 		"align": {
@@ -37,5 +39,4 @@
 			"default": "none"
 		}
 	}
-	
 }

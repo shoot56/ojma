@@ -9,16 +9,16 @@
  */
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'hero-' . $block['id'];
+$id = 'video-block-' . $block['id'];
 if ( ! empty($block['anchor'] ) ) {
 	$id = $block['anchor'];
 }
 
-// wp_enqueue_style('block-hero');
-
+$video_type = get_field('video_type');
+$video_file = get_field( 'video_file' );
 
 // Create class attribute allowing for custom "className" and "align" values.
-$classes = 'hero has-container';
+$classes = 'video-block';
 if ( ! empty( $block['className'] ) ) {
 	$classes .= ' ' . $block['className'];
 }
@@ -26,35 +26,12 @@ if ( ! empty( $block['align'] ) ) {
 	$classes .= ' align' . $block['align'];
 }
 
+
 $wrapper_attributes = get_block_wrapper_attributes([
 	'class' => $classes
 ]);
 
-$template = array(
-	
-);
-
-$allowed = array(
-	
-)
-
 ?>
-
-<?php /* style for Preview Only */ ?>
-<?php if ($is_preview): ?>
-<style type="text/css">
-	<?php echo '#' . $id; ?> {
-		overflow: hidden;
-	}
-	<?php echo '#' . $id; ?> .container {
-		position: relative;
-		z-index: 3;
-	}
-	<?php echo '#' . $id; ?> a {
-		pointer-events: none;
-	}
-</style>
-<?php endif ?>
 
 <?php if (isset( $block['data']['preview_image_help'] )  ): ?>
 	<?php 
@@ -63,24 +40,22 @@ $allowed = array(
 	?>
 <?php else: ?>
 <section id="<?php echo esc_attr( $id ); ?>" <?php echo $wrapper_attributes; ?>>
-	<div class="container">
-		<div class="hero__wrap">
-			<InnerBlocks class="hero__content" template="<?php echo esc_attr( wp_json_encode( $template ) ); ?>" />
-			<div class="hero__visual">
-				<?php $hero_image = get_field( 'hero_image' ); ?>
-				<?php $hero_bg = get_field( 'hero_bg' ); ?>
-				<?php if ( $hero_bg ) : ?>
-					<div class="hero__visual-bg">
-						<img src="<?php echo esc_url( $hero_bg['url'] ); ?>" alt="<?php echo esc_attr( $hero_bg['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
-				<?php if ( $hero_image ) : ?>
-					<div class="hero__visual-image">
-						<img src="<?php echo esc_url( $hero_image['url'] ); ?>" alt="<?php echo esc_attr( $hero_image['alt'] ); ?>" />
-					</div>
-				<?php endif; ?>
+	<div class="video-block__frame">
+		<?php if ( $video_type == 'youtube' ): ?>
+			<div class="video-block__youtube">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo get_field('youtube_video_id'); ?>?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</div>
-		</div>
+		<?php else: ?>
+			<?php if ( $video_file ): ?>
+				<div class="video-block__video">
+					<video src="<?php echo esc_url( $video_file['url'] ); ?>" loop></video>
+					<span class="video-block__video-play-pause">
+						
+					</span>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div>
+	
 </section>
 <?php endif; ?>

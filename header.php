@@ -30,18 +30,21 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ojma' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-header__row">
-			<div class="container">
-				<div class="site-header__row-info">
-					<div class="site-header__row-text">Meet Our Team at [Conference Name]!</div>
-					<div class="site-header__row-button">
-						<a href="#" class="btn site-header__row-btn">
-							<span class="btn__text">Schedule a Meeting</span>
-						</a>
+		<?php if ( get_field( 'show_header_row_info', 'option' ) == 1 ) : ?>
+			<div class="site-header__row">
+				<div class="container">
+					<div class="site-header__row-info">
+						<div class="site-header__row-text"><?php the_field( 'header_row_info_text', 'option' ); ?></div>
+						<div class="site-header__row-button">
+							<?php $header_row_button = get_field( 'header_row_button', 'option' ); ?>
+							<?php if ( $header_row_button ) : ?>
+								<a class="btn site-header__row-btn" href="<?php echo esc_url( $header_row_button['url'] ); ?>" target="<?php echo esc_attr( $header_row_button['target'] ); ?>"><span class="btn__text"><?php echo esc_html( $header_row_button['title'] ); ?></span></a>
+							<?php endif; ?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif; ?>
 		<div class="site-header__frame">
 			<div class="container">
 				<div class="site-header__wrap">
@@ -65,10 +68,13 @@
 							?>
 						</div>
 						<div class="main-navigation__button">
-							<a href="#" class="btn btn--primary">
-								<span class="btn__icon"><?php sprite_svg('icon-arrow-right', '24', '24', false); ?></span>
-								<span class="btn__text">CONTACT US</span>
-							</a>
+							<?php $header_contact_button = get_field( 'header_contact_button', 'option' ); ?>
+							<?php if ( $header_contact_button ) : ?>
+								<a href="<?php echo esc_url( $header_contact_button['url'] ); ?>" target="<?php echo esc_attr( $header_contact_button['target'] ); ?>" class="btn btn--primary">
+									<span class="btn__icon"><?php sprite_svg('icon-arrow-right', '24', '24', false); ?></span>
+									<span class="btn__text"><?php echo esc_html( $header_contact_button['title'] ); ?></span>
+								</a>
+							<?php endif; ?>
 						</div>
 					</nav><!-- #site-navigation -->
 				</div>
