@@ -187,8 +187,10 @@
 		}
 	}
 	.menu-item {
-		padding: 20px 16px;
-		border-bottom: 1px solid #374151;
+		@include mobile {
+			padding: 20px 16px;
+			border-bottom: 1px solid #374151;
+		}
 	}
 	.current-menu-item {
 		& > a {
