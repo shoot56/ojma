@@ -6,6 +6,9 @@
 	background-color: #120E0F;
 	color: #AFADAB;
 	overflow-x: clip;
+	@include mobile {
+		padding: 180px 0 32px;
+	}
 	&__wrap {
 		display:-ms-grid;
 		display:grid;

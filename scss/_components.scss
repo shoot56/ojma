@@ -448,3 +448,29 @@ h6 {
 		}
 	}
 }
+
+.wp-block-media-text.is-stacked-on-mobile {
+	@include tablet {
+		-ms-grid-columns:1fr;
+		grid-template-columns:1fr;
+		grid-gap: 40px;
+	}
+	.wp-block-media-text__media {
+		@include tablet {
+			-webkit-box-ordinal-group: 2;
+			-moz-box-ordinal-group: 2;
+			-ms-flex-order: 2;
+			-webkit-order: 2;
+			order: 2;
+			grid-column: auto;
+			grid-row: auto;
+		}
+	}
+	.wp-block-media-text__content {
+		@include tablet {
+			grid-column: auto;
+			grid-row: auto;
+			padding: 0;
+		}
+	}
+}
