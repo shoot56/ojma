@@ -48,7 +48,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
 		<?php else: ?>
 			<?php if ( $video_file ): ?>
 				<div class="video-block__video">
-					<video src="<?php echo esc_url( $video_file['url'] ); ?>" loop></video>
+					<video src="<?php echo esc_url( $video_file['url'] ); ?>#t=0.001" loop></video>
 					<span class="video-block__video-play-pause">
 						
 					</span>
