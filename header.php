@@ -28,8 +28,14 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'ojma' ); ?></a>
-
-	<header id="masthead" class="site-header">
+	<?php 
+	if (get_field( 'header_style' )) {
+		$header_style = 'site-header--' . get_field( 'header_style' );
+	} else {
+		$header_style = '';
+	}
+	?>
+	<header id="masthead" class="site-header <?php echo $header_style; ?>">
 		<?php if ( get_field( 'show_header_row_info', 'option' ) == 1 ) : ?>
 			<div class="site-header__row">
 				<div class="container">

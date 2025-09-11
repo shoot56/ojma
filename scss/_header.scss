@@ -7,6 +7,9 @@
 	left: 0;
 	width: 100%;
 	z-index: 4;
+	&--relative {
+		position: relative;
+	}
 	&__row {
 		background-color: #7EC052;
 		color: #070B12;

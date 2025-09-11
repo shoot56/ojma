@@ -474,3 +474,212 @@ h6 {
 		}
 	}
 }
+
+
+
+.input-item {
+	position: relative;
+	display: block;
+	margin-bottom: px-to-rem(24);
+	&--required {
+		.input-item__label {
+			&:after {
+				content: "*";
+				padding-left: 3px;
+				color: #e54545;
+			}
+		}
+	}
+	&.focus {
+		.input-item__label {
+			top: 0;
+			opacity: .8;
+		}
+	}
+	&__label {
+		display: block;
+		color: inherit;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		font-size: px-to-rem(18);
+		font-style: normal;
+		font-weight: 500;
+		line-height: normal;
+		transition: all 0.2s ease 0s;
+	}
+	.wpcf7-not-valid-tip {
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+	.wpcf7-form-control {
+		padding: 22px 0 7px;
+		background: transparent !important;
+		border: none;
+		border-bottom: 1px solid currentColor;
+		border-radius: 0;
+		display: block;
+		font-size: 24px;
+		line-height: 30px;
+		box-sizing: border-box;
+		width: 100%;
+		color: inherit;
+		outline: none !important;
+		
+		&.wpcf7-select {
+			padding-inline-end: px-to-rem(40);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' fill='none'%3E%3Cpath stroke='%236B6E88' stroke-width='2' d='m1 1 6 6 6-6'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: right 20px center;
+		}
+		&::-webkit-input-placeholder {
+			color: inherit;
+			opacity: 0.8;
+		}
+		&:-moz-placeholder {
+			color: inherit;
+			opacity: 0.8;
+		}
+		&::-moz-placeholder {
+			color: inherit;
+			opacity: 0.8;
+		}
+		&:-ms-input-placeholder {
+			color: inherit;
+			opacity: 0.8;
+		}
+		&.wpcf7-not-valid {
+			border-color: #e54545;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			border-color: inherit;
+		}
+		&.wpcf7-acceptance,
+		&.wpcf7-checkbox,
+		&.wpcf7-radio {
+			background: none;
+			padding: 0;
+			border: none !important;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+		&.wpcf7-acceptance,
+		&.checkbox-form-list,
+		&.radio-form-list {
+			display: -ms-grid;
+			display: grid;
+			grid-gap: 16px;
+			-ms-grid-columns: 1fr;
+			grid-template-columns: 1fr;
+		}
+	}
+}
+.from-button {
+	position: relative;
+}
+.wpcf7-list-item {
+	margin: 0;
+}
+
+.checkbox-holder {
+	position: relative;
+	padding-inline-start: px-to-rem(30);
+	cursor: pointer;
+	margin: 0;
+	font-size: 1rem;
+	line-height: px-to-rem(22);
+	display: block;
+	.acceptance-checkbox,
+	&__input {
+		position: absolute;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		top: 0;
+		left: 0;
+		& ~ .checkbox-item {
+			position: absolute;
+			width: px-to-rem(20);
+			height: px-to-rem(20);
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid $clr-base;
+			border-radius: 2px;
+			top: 0;
+			inset-inline-start: 0;
+			&:after {
+				content: "";
+				position: absolute;
+				width: px-to-rem(10);
+				height: px-to-rem(10);
+				top: 50%;
+				left: 50%;
+				margin: px-to-rem(-5) 0 0 px-to-rem(-5);
+			}
+		}
+		&[type="checkbox"] ~ .checkbox-item {
+			border-radius: 4px;
+			&:after {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' fill='none'%3E%3Cpath stroke='%236B6E88' stroke-width='2' d='M1 2.5 4 6l5-5'/%3E%3C/svg%3E");
+			}
+		}
+		&[type="radio"] ~ .checkbox-item {
+			border-radius: 50%;
+			&:after {
+				border-radius: 50%;
+				background-color: $clr-base;
+			}
+		}
+		&:not(:checked) ~ .checkbox-item {
+			.wpcf7-not-valid & {
+				border: 1px solid #e54545 !important;
+			}
+			&:after {
+				display: none;
+			}
+		}
+		&:checked ~ .checkbox-item {
+			&:after {
+				display: block;
+			}
+		}
+		&:disabled {
+			& ~ .checkbox-label {
+				color: #aaa;
+			}
+		}
+	}
+}
+.wpcf7-spinner,
+.ajax-loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -12px 0 0 -12px;
+	z-index: 3;
+}
+.acceptance-item {
+	@include tablet {
+		margin-bottom: 1rem;
+	}
+	.wpcf7-list-item {
+		margin-left: 0;
+	}
+}
+.checkbox-row {
+	margin-bottom: 1rem;
+}
+.from-button {
+	margin-top: px-to-rem(24);
+}

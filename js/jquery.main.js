@@ -17,6 +17,15 @@
 			e.preventDefault();
 			$('body').toggleClass('nav-active');
 		});
+		// form
+		$('.input-item__input').on('focus', function() {
+			$(this).closest('.input-item').addClass('focus');
+		});
+		$('.input-item__input').on('focusout', function() {
+			if ($(this).val() == ''){
+				$(this).closest('.input-item').removeClass('focus');
+			}
+		});
 	});
 })(jQuery);
 
